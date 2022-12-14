@@ -403,10 +403,134 @@ const bebe = "Camelia";
 console.log(bebe.at(-1)); // o .charAt
 console.log(bebe[0]); // entre [] se pone el numero de indice
 
-// CLASES Y HERENCIAS
-// VIDEO → https://www.youtube.com/watch?v=C86JvqET61A&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=25 
+
+
+
+
+/**
+ * !CLASES Y HERENCIAS
+ * * VIDEO → https://youtu.be/C86JvqET61A
+ */
+
+
+
+class Animal { 
+
+    // el constructor es un método especial que se ejecuta
+    // en el momento de instaciar la clase 
+    // A LA CLASE NO SE LE PASAN PARÁMETROS, AL CONSTRUCTOR SI
+
+    constructor(nombre, genero){
+        this.nombre = nombre;
+        this.genero = genero;
+    }
+    sonar(){
+        console.log(" hago ruidos!!!");
+    }
+
+    saludar(){
+        console.log(`Hola, bienvenido! me llamo ${this.nombre}`);
+    }
+
+}
+
+
+const Minnie = new Animal("Minnie", "Hembra");
+
+
+console.log(Minnie);
+Minnie.saludar();
+
+
+// HERENCIA
+
+class Perro extends Animal {
+    constructor(nombre, genero, size){
+        // con el metodo super() se manda a llamar el constructor de la case padre
+        super(nombre, genero);
+        // no va en super porque size es un atributo especial SOLO de perro
+        this.size = size;
+        this.raza = null;
+    }
+
+    saludar(){
+        console.log(`Hola, como te va? me llamo ${this.nombre}, es lindo verte`);
+    }
+
+    ladrar(){
+        console.log("guauuuuu guuuuaauu!!!!!");
+    }
+
+    static queEres() {
+        console.log("soy un tierno cachorro");
+    }
+
+    get getRaza(){
+        return this.raza;
+    }
+
+    set setRaza(raza){
+        this.raza = raza;
+    }
+
+};
+
+const camelia = new Perro ("Camelia", "Hembra", "Mediana");
+
+console.log(camelia);
+camelia.saludar();
+camelia.ladrar();
+
+
+
+
+/**
+ * ! Métodos estáticos, getters y setters
+ * * Video → https://youtu.be/TEzu31q9MVA
+ */
+
+// todas las clases son publicas en js
+// métodos static. es el que se puede ejecutar sin necesidad de instanciar la clase
+
+Perro.queEres(); // se ejecuta sin tener que asignarle ese metodo a una constante, como Minnie o Camelia
+
+// los setters y getters son metodos especiales que nos permiten establecer
+// y obtener los valores de atributos de nuestra clase
+
+// LOS SET Y GET SE TRABAJAN COMO METODOS/FUNCIONES PERO JS LOS TOMA COMO PROPIEDADES
+
+// camelia.setRaza("Bulldog Frances"); ESTO ESTA MAL, PORQUE ES UN SET Y LOS SET Y GET NO 
+// SE PASAN COMO METODOS SINO COMO PROPIEDADES, ASÍ: 
+
+camelia.setRaza = "Bulldog Francés";
+
+console.log(`La raza es: ${camelia.getRaza}`);
+
+/**
+ * ! SET TOMA UN PARÁMETRO, UN DATO, QUE YO LE PIDO AL USUARIO POR EJEMPLO
+ * ! EN ESTE CASO LA RAZA, LO TOMO Y PONGO SETALGO = LO QUE QUIERO PONER DE DATO
+ * ? GET EN CAMBIO, TOMA EL DATO DE SET Y LO MUESTRA, LO TOMA Y ALMACENA
+ */
+
+
 
 
 /* CONSOLE CLEAR*/
 console.clear(); console.log(`🐷🐽`);
+
+
+/**
+ * ! OBJETO CONSOLE
+ * * Video → https://youtu.be/qM9Rsv3LCWc
+ */
+
+/**
+ * ! EXPRECIONES REGULARES
+ * * video → https://www.youtube.com/watch?v=aPkBloR9MEI 
+ */
+
+/**
+ * ! FUNCIONES ANONIMAS AUTOEJECUTABLES
+ * * video → https://www.youtube.com/watch?v=gbHr5qJjLRg 
+ */
 

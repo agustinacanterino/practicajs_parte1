@@ -2062,6 +2062,7 @@ Object.values(jungkook).forEach((valor) => {
   let busqueda = parseInt(prompt('ingresa el numero que quieres buscar en el array'));
   
   
+  
   let auxiliar = 0;
   
   for (let i = 0; i <6; i++){
