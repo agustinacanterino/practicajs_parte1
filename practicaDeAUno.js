@@ -1,15 +1,28 @@
+
+
 /* CONSOLE CLEAR*/
-console.clear(); console.log(`🐷🐽`);    
+console.clear(); console.log(`🐷🐽`);   
 
 /**
- * ! Remove exclamation marks
- * * https://www.codewars.com/kata/57a0885cbb9944e24c00008e
- * Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+ * ! 
+ * * 
+ * 
  */
 
+function arithmetic(a, b, operator){
+    switch(operator){
+        case "add":
+            return a+b;
 
-
-
-const RemoveExclamationMarks = function (str){
-     
+        case "subtract":
+            return a-b;
+            
+        case "divide":
+            return a/b;
+            
+        case "multiply":
+            return a*b;
+    }
 }
+
+  console.log(arithmetic(952,2,'subtract'));

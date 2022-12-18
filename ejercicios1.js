@@ -445,5 +445,82 @@ console.log(saleHotdogs(11));
 
 
 
+
+
+
+
+
+
+/**
+ * ! Localize The Barycenter of a Triangle
+ * * https://www.codewars.com/kata/5601c5f6ba804403c7000004
+ */
+
+function barTriang(a, b, c){
+    let aCopia = [], bCopia = [], cCopia = [];
+
+    aCopia.push(a[0]), aCopia.push(a[1]);
+    bCopia.push(b[0]), bCopia.push(b[1]);
+    cCopia.push(c[0]), cCopia.push(c[1]);
+    
+    let x0 = (aCopia[0] + bCopia[0] + cCopia[0]) / 3;
+    let y0 = (aCopia[1] + bCopia[1] + cCopia[1]) / 3;
+    // REDONDEAR DECIMALES DE UN NUMERO!
+    let x1 = Number(x0.toFixed(4));
+    let y1 = Number(y0.toFixed(4));
+
+    let result = [x1, y1];
+    return result; 
+    
+    
+    
+}
+
+console.log(barTriang([4,6], [12,4], [10,10]));
+
+
+
+
+
+
+
+/**
+ * !Count the likes
+ * *
+ * 
+ */
+
+
+var evalLikes = function(words){
+    let contlike = 0, 
+        tot = words.length,
+        prom = 0;
+   
+    for(let i = 0; i <words.length; i++){
+      if (words[i] === "like"){
+        contlike++;
+      }
+    }
+    if (contlike === 0){
+        return false;
+    }else{
+        if (contlike != 0){
+            prom = tot / contlike; 
+        }
+        if (prom > 0.5){
+            return true;
+        }else{
+            return false;
+        }
+    }
+  }
+
+
+  console.log(evalLikes(['hola', 'casa', 'likee']));
+
+
+  
+
+
 /* CONSOLE CLEAR*/
 console.clear(); console.log(`🐷🐽`);
